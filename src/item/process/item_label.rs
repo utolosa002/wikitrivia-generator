@@ -35,7 +35,8 @@ pub fn get(
 
     let res = client
         .get(format!(
-            "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&ids={}&languages=en&format=json",
+            //
+            "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&ids={}&languages=eu&format=json",
             id
         ))
         .header(USER_AGENT, "wiki-game analysis by wiki-game@tomjwatson.com")
@@ -61,7 +62,8 @@ pub fn get(
     }
 
     let json = json.unwrap();
-    let label = json.entities.get(id)?.labels.get("en")?.value.to_string();
+    //
+    let label = json.entities.get(id)?.labels.get("eu")?.value.to_string();
 
     id_label_map.insert(id.to_string(), label.to_string());
 

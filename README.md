@@ -1,5 +1,15 @@
 # WikiTrivia Generator
 
+## Euskaraz
+
+The code for generating cards for https://wikitribia.talaios.coop
+
+The repository for the website can be found [here](https://github.com/utolosa002/wikitrivia).
+
+# WikiTrivia Generator
+
+## Original
+
 The code for generating cards for https://wikitrivia.tomjwatson.com.
 
 The repository for the website can be found [here](https://github.com/tom-james-watson/wikitrivia).

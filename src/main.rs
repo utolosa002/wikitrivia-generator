@@ -94,7 +94,7 @@ fn main() {
                     &item.year
                 );
                 info!(
-                    "https://en.wikipedia.org/wiki/{}",
+                    "https://eu.wikipedia.org/wiki/{}",
                     item.wikipedia_title.replace(" ", "_")
                 );
                 info!("page_views: {}", &item.page_views);

@@ -23,7 +23,8 @@ struct PageViewsResponse {
 pub fn get(wikipedia: &str, client: &Client) -> Option<usize> {
     let res = client
         .get(format!(
-            "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/{}/monthly/2021010100/2021020100",
+            //
+            "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/{}/monthly/2022010100/2022020100",
             wikipedia.replace(" ", "_")
         ))
         .header(USER_AGENT, "wiki-game analysis by wiki-game@tomjwatson.com")

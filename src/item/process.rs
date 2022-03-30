@@ -26,12 +26,13 @@ fn get_id(item_json: &Value) -> Option<String> {
 }
 
 fn get_wikipedia_title(item_json: &Value) -> Option<String> {
-    let wikipedia_title = item_json["sitelinks"]["enwiki"].as_str()?;
+    let wikipedia_title = item_json["sitelinks"]["euwiki"].as_str()?;
     return Some(wikipedia_title.to_string());
 }
 
 fn get_label(item_json: &Value) -> Option<String> {
-    let label = item_json["labels"].get("en")?;
+    //
+    let label = item_json["labels"].get("eu")?;
     return Some(label.as_str().unwrap().to_string());
 }
 
@@ -59,7 +60,7 @@ fn ok_label(label: &str) -> bool {
 }
 
 fn get_description(item_json: &Value) -> Option<String> {
-    let description = item_json["descriptions"].get("en")?;
+    let description = item_json["descriptions"].get("eu")?;
     let description = first_letter_to_uppper_case(description.as_str().unwrap().to_string());
     return Some(description);
 }

@@ -47,7 +47,7 @@ pub struct Wikipedia {
 pub fn get(wikipedia: &str, client: &Client) -> Option<Wikipedia> {
     let res = client
         .get(format!(
-            "https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&titles={}",
+            "https://eu.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&titles={}",
             wikipedia.replace(" ", "_")
         ))
         .header(USER_AGENT, "wiki-game analysis by wiki-game@tomjwatson.com")
