@@ -240,24 +240,24 @@ fn enough_sitelinks(num_sitelinks: usize) -> bool {
 
 fn enough_page_views(year: i64, instance_of: &Vec<String>, page_views: usize) -> bool {
     if instance_of.contains(&String::from("human")) {
-        if year > 1920 && page_views < 100000 {
+        if year > 1920 && page_views < 300 {
             return false;
-        } else if year > 1900 && page_views < 25000 {
+        } else if year > 1900 && page_views < 100 {
             return false;
-        } else if year > 1800 && page_views < 15000 {
+        } else if year > 1800 && page_views < 80 {
             return false;
-        } else if page_views < 10000 {
+        } else if page_views < 50 {
             return false;
         }
     }
 
-    if year > 1960 && page_views < 40000 {
+    if year > 1960 && page_views < 300 {
         return false;
-    } else if year > 1900 && page_views < 25000 {
+    } else if year > 1900 && page_views < 150 {
         return false;
-    } else if year > 1800 && page_views < 15000 {
+    } else if year > 1800 && page_views < 50 {
         return false;
-    } else if page_views < 10000 {
+    } else if page_views < 20 {
         return false;
     }
 
@@ -297,9 +297,9 @@ pub fn process_item_json(
     let occupations = get_occupations(&item_json, id_label_map, client);
     let num_sitelinks = get_num_sitelinks(&item_json)?;
 
-    if !enough_sitelinks(num_sitelinks) {
-        return None;
-    }
+    // if !enough_sitelinks(num_sitelinks) {
+    //     return None;
+    // }
 
     let page_views = page_views::get(&wikipedia_title, client)?;
 
